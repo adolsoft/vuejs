@@ -129,7 +129,7 @@ export default {
     }
   },
   beforeCreate () { // sayfa ilk oluşturuluken yapılacak islemler olabilir.
-    console.log('beforeCreate') 
+    console.log('beforeCreate')
   },
   async created () { // burada veritabanı veya beckend isteklerimizi burda çekebiliriz.
     // foksiyonun basına async yazmamız gerekiyor ve await yazmamız gerekiyor.
@@ -141,7 +141,7 @@ export default {
     // orneğin
     console.log('mounted')
   },
-  beforeUpdate () { // isindeki bilgiler guncellendiği zaman çalısasak 
+  beforeUpdate () { // isindeki bilgiler guncellendiği zaman çalısasak
     // console.log('beforeUpdate')
   },
   updated () {
