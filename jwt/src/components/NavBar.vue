@@ -7,9 +7,14 @@
   
         <v-spacer></v-spacer>
   
-        <v-btn v-if="userName !== ''" icon class="pr-16 ml-16" @click="logout">
-          {{ userName }}
+        <v-btn v-if="loggedInUser.id" icon class="pr-16 ml-16" @click="logout">
+          {{ loggedInUser.username }}
         </v-btn>
+        
+        <!--v-btn v-if="userName !== ''" icon class="pr-16 ml-16" @click="logout">
+          {{ userName }}
+        </v-btn-->
+ 
       </v-app-bar>
     </div>
   </template>
@@ -21,13 +26,22 @@
         console.log(path);
         this.$router.push(path);
       },
+      //logout() {
+      //  this.$store.commit("setSelectedUser", "");
+      //},
       logout() {
-        this.$store.commit("setSelectedUser", "");
+        this.$store.commit("setLoggedInUser", {});
+        // browserdaki localStorage bulunan token silmek için kullanılır.
+        window.localStorage.removeItem("token");
       },
     },
     computed: {
       userName() {
         return this.$store.getters.getSelectedUser;
+      },
+
+      loggedInUser() {
+        return this.$store.getters.getLoggedInUser;
       },
     },
   };

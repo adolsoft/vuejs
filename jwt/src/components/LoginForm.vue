@@ -33,6 +33,12 @@
        // store / index.vue dosyasında  mutations ile yapıyoruç Mutationlar bizim state mizi değiştiren ksımdı 
        // yukarıdaki sayfaya git bak
      },
+     getUsers() { 
+        this.$store.dispatch("getUsers", { // getUsers metodunu çağırıyor. dispatch yazdığımız için action kısmında çağrılır.
+        // burası store / index.js dosyasındaki action: içindeki getUsers metodunu çağırıyor.
+        });
+       
+     },
    },
  };
   </script>
